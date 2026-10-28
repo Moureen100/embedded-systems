@@ -1,0 +1,6 @@
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+"-specs=C:/Users/Moi/Desktop/cocis_complete_project/cocis-room2/build/specs/picolibc.specs"

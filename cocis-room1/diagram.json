@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "Group",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -110, "left": 200, "attrs": {} },
+    { "type": "wokwi-led", "id": "lamp", "top": -80, "left": 330, "attrs": { "color": "yellow", "label": "Room light" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:13", "pir1:OUT", "green", [] ],
+    [ "esp:5V", "pir1:VCC", "red", [] ],
+    [ "esp:GND.1", "pir1:GND", "black", [] ],
+    [ "esp:12", "lamp:A", "orange", [] ],
+    [ "lamp:C", "esp:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}
