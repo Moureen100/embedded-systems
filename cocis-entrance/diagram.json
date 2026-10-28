@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "Group",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "led_in", "top": -80, "left": 200, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "led_out", "top": -80, "left": 260, "attrs": { "color": "blue" } },
+    { "type": "wokwi-led", "id": "led_deny", "top": -80, "left": 320, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": -90, "left": 380, "attrs": { "volume": "0.1" } },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": 120, "left": 260, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+
+    [ "esp:2", "led_in:A", "green", [] ],
+    [ "led_in:C", "esp:GND.1", "black", [] ],
+    [ "esp:4", "led_out:A", "blue", [] ],
+    [ "led_out:C", "esp:GND.1", "black", [] ],
+    [ "esp:15", "led_deny:A", "red", [] ],
+    [ "led_deny:C", "esp:GND.1", "black", [] ],
+    [ "esp:13", "bz1:2", "orange", [] ],
+    [ "bz1:1", "esp:GND.1", "black", [] ],
+
+    [ "esp:5", "sd1:CS", "gold", [] ],
+    [ "esp:23", "sd1:DI", "gold", [] ],
+    [ "esp:19", "sd1:DO", "gold", [] ],
+    [ "esp:18", "sd1:SCK", "gold", [] ],
+    [ "esp:3V3", "sd1:VCC", "red", [] ],
+    [ "esp:GND.1", "sd1:GND", "black", [] ]
+  ],
+  "dependencies": {}
+}

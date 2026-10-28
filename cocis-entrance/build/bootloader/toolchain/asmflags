@@ -1,0 +1,6 @@
+"-specs=C:/Users/Moi/Desktop/cocis_complete_project/cocis-entrance/build/bootloader/specs/picolibc.specs"
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
